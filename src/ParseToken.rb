@@ -1,8 +1,37 @@
-# module ParseToken
-def parseToken(str)
-  array = Array.new
-  temp =""
-  regex = /[a-zA-Z0-9]+/
+class ParseToken
+  def parseToken(s="")
+    regex = /^[0-9]$/
+    temp = ""
+    arrT = Array.new
+
+    s = s.delete(" ")
+    s.each_char{|c|
+      if c.match(regex) #return the initial index of the string that match w regex -> return 0 because s[i] has 1 char.
+        temp += c
+        # print(s[i] + "\n")
+      else
+        arrT.push(temp)
+        temp = ""
+        arrT.push(c)
+      end
+    }
+
+
+    if !temp.empty?
+      arrT.push(temp)
+    end
+
+    arrT = arrT.delete("")
+    return arrT
+  end
+end
+
+
+
+#
+# # array = Array.new
+# temp =""
+# regex = /[a-zA-Z0-9]+/
 
 #   for i in 0...str.length do
 #     if(str[i] == regex) #regex for alphanumberic
@@ -13,8 +42,6 @@ def parseToken(str)
 #     end
 #   end
 #   return array
-#
-end
 #
 # testStr = "a+b"
 
@@ -50,30 +77,30 @@ end
 # end
 #
 
-regex = /^[0-9]$/
-temp = ""
-s =  "(67-(79^7)) + 7"
-arrT = Array.new
-
-s = s.delete(" ")
-for i in 0...s.length do
-  if s[i].match(regex) #return the initial index of the string that match w regex -> return 0 because s[i] has 1 char.
-    temp += s[i]
-    # print(s[i] + "\n")
-  else
-    arrT.push(temp)
-    temp = ""
-    arrT.push(s[i])
-  end
-end
-
-if !temp.empty?
-  arrT.push(temp)
-end
-
-arrT.delete("")
-
-for i in 0...arrT.length do
-  print(arrT[i] + "\n")
-end
+# regex = /^[0-9]$/
+# temp = ""
+# s =  "(67-(79^7)) + 7"
+# arrT = Array.new
+#
+# s = s.delete(" ")
+# for i in 0...s.length do
+#   if s[i].match(regex) #return the initial index of the string that match w regex -> return 0 because s[i] has 1 char.
+#     temp += s[i]
+#     # print(s[i] + "\n")
+#   else
+#     arrT.push(temp)
+#     temp = ""
+#     arrT.push(s[i])
+#   end
+# end
+#
+# if !temp.empty?
+#   arrT.push(temp)
+# end
+#
+# arrT.delete("")
+#
+# for i in 0...arrT.length do
+#   print(arrT[i] + "\n")
+# end
 # end
