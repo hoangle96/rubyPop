@@ -6,32 +6,37 @@
     infix << ")"
 
     arrPf.push("(")
-    for i in 0...infix.length do
-      case
-        when !Integer(infix[i]).nan?
-        when isOp(infix[i])
-          arrPf.each { |a|
-            if isOp(a)
-              if precedence(infix[i], a)
-                arrPf.push(a)
-              end
-            end
-          }
-          arrPf.push(infix[i])
-        when infix[i] == "("
-          arrPf.push(infix[i])
-      end # end case
-    end # end of for loop through infix
+    while !infix.empty? do
+
+    end
+
+
+
+    # for i in 0...infix.length do
+    #   case
+    #     when !Integer(infix[i]).nan?
+    #       arrPf.push(infix[i])
+    #     when isOp(infix[i])
+    #       arrPf.each { |a|
+    #         if isOp(a)
+    #           if precedence(infix[i], a)
+    #             arrPf.push(a)
+    #           end
+    #         end
+    #       } # for each loop for the case that infix[i] is an element
+    #       arrPf.push(infix[i])
+    #     when infix[i] == "("
+    #       while
+    #       arrPf.push(infix[i])
+    #   end # end case
+    # end # end of for loop through infix
   end # end of def ConvertToPostFix
 
-  def isOp(s)
-    ops = ["+","-","/","*","^","%"]
-    if ops.include?(s)
-      return true
-    else
-      return false
-    end # end of if
-  end # end def isOp
+    def isOp(s)
+      ops = ["+","-","/","*","^","%"]
+      return ops.include?(s) ? true: false
+    end
+
 
   def precedence(op1, op2)
     order = {
@@ -53,6 +58,10 @@
     else
       return false
     end
+  end
+
+  def op
+
   end
 
 # end #end of class
