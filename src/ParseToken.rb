@@ -1,5 +1,5 @@
-class ParseToken
-  def parseToken(s="")
+module ParseToken
+  def ParseToken(s="")
     regex = /^[0-9]$/
     temp = ""
     arrT = Array.new
@@ -15,8 +15,6 @@ class ParseToken
         arrT.push(c)
       end
     }
-
-
     if !temp.empty?
       arrT.push(temp)
     end
@@ -24,10 +22,7 @@ class ParseToken
     arrT = arrT.delete("")
     return arrT
   end
-end
-
-
-
+  end
 #
 # # array = Array.new
 # temp =""

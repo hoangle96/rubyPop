@@ -1,12 +1,29 @@
-require_relative '../src/ParseToken.rb'
+require_relative 'ParseToken'
+require_relative 'converttopostfix'
+require_relative 'eval'
+
+include ParseToken
+include ConvertToPostfix
+# include evalE
 
 
+# user input
 puts "Please type in an infix expression"
 inFixStr = gets.strip
+#
+# postFix = Array.new
+ inFix = Array.new
+#
+inFix =  ParseToken(inFixStr)
+for i in 0...inFixStr.length do
+  print (inFix[i])
+end
 
-tokenObj = ParseToken.new
-postFix = tokenObj.parseToken(inFixStr)
+# postFix = ConvertToPostFix(inFix)
 
-postFix.each
+# print(evalE(["53", "27", "2", "+", "*"]))
 
-
+# postFix.each{ |s|
+#   print(s + "\n")
+# }
+#
