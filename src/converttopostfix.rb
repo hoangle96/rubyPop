@@ -34,11 +34,8 @@ module ConvertToPostfix
       elsif s == "("
         stack.push(s)
       elsif isOp(s)
-        print(s + " is an op. ")
         stack.reverse_each {|opsInStack|
           if isOp(opsInStack) and !precedence(opsInStack, s)
-            print(opsInStack + "\n")
-            print(isOp(opsInStack))
             postfix.push(stack.pop)
           elsif !isOp(opsInStack)
             break
@@ -60,6 +57,7 @@ module ConvertToPostfix
       postfix.push(stack.pop)
     end
 
-    return @postfix
+    return postfix
+
   end
 end

@@ -8,7 +8,6 @@
   end
 
   def evalE(pft)
-    # pft = ["53", "27", "2", "+", "*"]
     pfEnd = pft.length
     regex = /[0-9]/
     arrT = Array.new
@@ -17,15 +16,11 @@
       if pft[i].match(regex)
         arrT.push(pft[i]) # this is where we load up the stack
       else
-        var1 = arrT.shift() # we want the bottom element of the stack
-        var2 = arrT.shift()
-        arrT.push(calc(var1, pft[i], var2))
+        var1 = arrT.pop() # we want the bottom element of the stack
+        var2 = arrT.pop()
+        arrT.push(calc(var2,pft[i],var1))
       end
     end
-
     return arrT.pop()
-
   end
  end
-
-# print evalE(["53", "27", "2", "+", "*"])

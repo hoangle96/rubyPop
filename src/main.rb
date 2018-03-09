@@ -4,26 +4,24 @@ require_relative 'eval'
 
 include ParseToken
 include ConvertToPostfix
-# include evalE
-
+include Eval
 
 # user input
 puts "Please type in an infix expression"
 inFixStr = gets.strip
-#
-# postFix = Array.new
- inFix = Array.new
-#
-inFix =  ParseToken(inFixStr)
-for i in 0...inFixStr.length do
-  print (inFix[i])
-end
 
-# postFix = ConvertToPostFix(inFix)
+# Convert infix string to tokens
+inFix = ParseToken(inFixStr)
 
-# print(evalE(["53", "27", "2", "+", "*"]))
+# convert infix expression to postfix expression
+postFix = ConvertToPostFix(inFix)
+print("Equivalent postfix expression: ")
+postFix.each{|s|
+  print(s)
+}
 
-# postFix.each{ |s|
-#   print(s + "\n")
-# }
-#
+print("\n")
+
+# evaluate the result
+result = evalE(postFix)
+print result
