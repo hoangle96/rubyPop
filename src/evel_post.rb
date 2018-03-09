@@ -7,7 +7,7 @@ def calc(x,op,y)
   end
   return(x.to_i.send(op,y.to_i))
 end
-#def evalE(pf)
+#def evalE(pft)
   pft = ["53", "27", "2", "+", "*"]
   pfEnd = pft.length
   regex = /[0-9]/
