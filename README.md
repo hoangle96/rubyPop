@@ -14,6 +14,9 @@ Also, if you [register a student account](https://www.jetbrains.com/student/), R
 "+", "New local...", and select *Ruby.exe* in ...yourRubyInstallationDirectory/bin/ruby.exe. Hit Ok.
 * Run *main.rb* by selecting the file then select Run from the Menu bar, then Run (or Shift + F10 on Windows, ⌃R/⌃D on Mac).
 
+## Note
+Most of this project was built with [String](http://ruby-doc.org/core-2.5.0/Array.html), [Array](http://ruby-doc.org/core-2.5.0/Array.html), and [Hash](https://ruby-doc.org/core-2.5.0/Hash.html). The algorithm used in the project can be found [here](https://lasalle.instructure.com/courses/15714/files?preview=1234662).
+
 ## Built with
 * [RubyMine](https://www.ruby-lang.org/en/downloads/)
 * [GitHub Desktop](https://desktop.github.com/)
