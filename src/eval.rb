@@ -4,7 +4,10 @@
     if op == "^"
       op = "**"
     end
-    return(x.to_i.send(op, y.to_i))
+    a = x.to_i.send(op,y.to_i)
+  rescue ZeroDivisionError => e
+    p e.to_s
+    return a
   end
 
   # evalE takes the postfix stack (array), iterates through each element of the stack.
